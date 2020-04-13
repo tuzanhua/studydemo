@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HandlerBlockTestActivity" />
+
+        <service android:name="com.tzh.android.TIntentService.TTestIntentService" />
     </application>
 
 </manifest>

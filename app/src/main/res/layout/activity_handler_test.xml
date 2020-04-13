@@ -41,4 +41,21 @@
         android:layout_gravity="center_horizontal"
         android:background="@color/colorAccent" />
 
+    <Button
+        android:id="@+id/btn_handle_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="thread"/>
+
+    <Button
+        android:id="@+id/btn_start_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="intentservice"/>
+
 </LinearLayout>
