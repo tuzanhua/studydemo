@@ -8,13 +8,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btn_handler_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Handler Test"/>
+
+        <Button
+            android:id="@+id/btn_start_leak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="start_makeleak"/>
 
     </LinearLayout>
 

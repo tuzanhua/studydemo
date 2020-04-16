@@ -22,10 +22,10 @@ public class LinkListDemo {
 
 //        Node reverse = reverse(a);
         Node reverse = reverseDiGui(a);
-//        while (reverse != null) {
-//            System.out.println(reverse.data + ",");
-//            reverse = reverse.next;
-//        }
+        while (reverse != null) {
+            System.out.println(reverse.data + ",");
+            reverse = reverse.next;
+        }
     }
 
     /**
@@ -56,7 +56,7 @@ public class LinkListDemo {
     // a-> b -> c -> d
     public static Node reverseDiGui(Node head) {
         //退出递归条件 head == null
-        if (head.next == null) {
+        if (head == null || head.next == null) {
             return head;
         }
         //d

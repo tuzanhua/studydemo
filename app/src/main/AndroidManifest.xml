@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".HandlerBlockTestActivity" />
+        <activity android:name=".MakeLeakActivity" />
 
         <service android:name="com.tzh.android.TIntentService.TTestIntentService" />
     </application>
