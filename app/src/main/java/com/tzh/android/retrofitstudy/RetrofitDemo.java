@@ -1,5 +1,8 @@
 package com.tzh.android.retrofitstudy;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 
 /**
@@ -10,5 +13,20 @@ public class RetrofitDemo {
     public void test(){
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.baseUrl("");
+        Retrofit retrofit = builder.build();
+        IRequest iRequest = retrofit.create(IRequest.class);
+        Call<String> data = iRequest.getData();
+        data.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+
+            }
+        });
+
     }
 }

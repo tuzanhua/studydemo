@@ -6,6 +6,9 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -29,6 +32,9 @@ public class MakeLeakActivity extends FragmentActivity {
     private Bitmap bitmap = null;
     private ImageView imageView;
     private LeakViewModel leakViewModel;
+    private Handler handler;
+    private HandlerThread handlerThread;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,12 +55,6 @@ public class MakeLeakActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 leakViewModel.getData();
-                try {
-                    Thread.sleep(2000);
-//                    startActivity(new Intent(MakeLeakActivity.this,MainActivity.class));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
 
             }
         });
@@ -72,6 +72,19 @@ public class MakeLeakActivity extends FragmentActivity {
                 .load(R.drawable.login_bg)
                 .into(imageView);
 
+
+        handlerThread = new HandlerThread("leak");
+        handlerThread.start();
+        handler = new Handler(handlerThread.getLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                LogUtil.e("我造成的内存泄漏");
+                handler.sendEmptyMessageDelayed(0, 2000);
+            }
+        };
+        handler.sendEmptyMessageDelayed(0, 2000);
+
+
     }
 
     @Override
@@ -80,10 +93,13 @@ public class MakeLeakActivity extends FragmentActivity {
 //        BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
 //        rceycleBitmapDrawable(drawable);
 //        imageView = null;
+        if (handlerThread != null) {
+            handlerThread.quitSafely();
+        }
         super.onDestroy();
     }
 
-    private  void rceycleBitmapDrawable(BitmapDrawable bitmapDrawable) {
+    private void rceycleBitmapDrawable(BitmapDrawable bitmapDrawable) {
         if (bitmapDrawable != null) {
             Bitmap bitmap = bitmapDrawable.getBitmap();
             imageView.setImageDrawable(null);
@@ -92,7 +108,7 @@ public class MakeLeakActivity extends FragmentActivity {
         bitmapDrawable = null;
     }
 
-    private  void rceycleBitmap(Bitmap bitmap) {
+    private void rceycleBitmap(Bitmap bitmap) {
         if (bitmap != null && !bitmap.isRecycled()) {
             bitmap.recycle();
             bitmap = null;

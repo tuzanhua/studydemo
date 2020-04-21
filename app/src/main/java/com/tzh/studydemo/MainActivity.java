@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.tzh.studydemo.activity.FlowLayoutActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,15 +17,19 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_handler_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,HandlerBlockTestActivity.class));
+                startActivity(new Intent(MainActivity.this, HandlerBlockTestActivity.class));
             }
         });
 
         findViewById(R.id.btn_start_leak).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,MakeLeakActivity.class));
+                startActivity(new Intent(MainActivity.this, MakeLeakActivity.class));
             }
+        });
+
+        findViewById(R.id.btn_flow_layout).setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, FlowLayoutActivity.class));
         });
     }
 }
