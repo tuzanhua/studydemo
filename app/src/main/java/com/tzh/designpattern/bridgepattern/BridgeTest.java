@@ -6,7 +6,7 @@ package com.tzh.designpattern.bridgepattern;
 public class BridgeTest {
     public static void main(String[] args) {
 
-        IComputer computer = new TaiShiComputer(new AppleBrand());
-        System.out.println(computer.name());
+//        IComputer computer = new TaiShiComputer(new AppleBrand());
+//        System.out.println(computer.name());
     }
 }

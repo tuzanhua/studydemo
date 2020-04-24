@@ -2,6 +2,7 @@ package com.tzh.android.flowlayout;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.tzh.android.LogUtil;
@@ -55,6 +56,14 @@ public class FlowLayout extends ViewGroup {
             case MeasureSpec.UNSPECIFIED:
                 LogUtil.e("height mode : UNSPECIFIED");
                 break;
+        }
+
+        int childCount = getChildCount();
+        if (childCount > 0) {
+            for (int i = 0; i < childCount; i++) {
+                View childView = getChildAt(i);
+            }
+
         }
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }

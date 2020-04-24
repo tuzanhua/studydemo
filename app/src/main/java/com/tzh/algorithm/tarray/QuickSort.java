@@ -40,7 +40,7 @@ public class QuickSort {
 
     public static int getPosition(int[] arr, int left, int right) {
         // 采用三数中值分割法
-        int mid = left + (right - left) / 2;
+        int mid = left + (right - left) >> 2;  // 1.这种写法防止 mid 溢出    2.左移 效率更高
         // 保证左端较小
         if (arr[mid] > arr[left]) {
             int temp = arr[mid];
