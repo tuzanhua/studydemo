@@ -1,7 +1,5 @@
 package com.tzh.java;
 
-import java.util.Observable;
-
 /**
  * create by tuzanhua on 2020/4/13
  * <p>
@@ -13,7 +11,6 @@ public class JieChengDemo {
         System.out.println("value :" + jieCheng);
         System.out.println("value1 :" + getJieCheng1(5));
 
-        Observable
     }
 
     /**
@@ -29,7 +26,7 @@ public class JieChengDemo {
     public static int getJieCheng1(int num) {
         int sum = 1;
         for (int i = 1; i <= num; i++) {
-             sum *= i;
+            sum *= i;
         }
         return sum;
     }

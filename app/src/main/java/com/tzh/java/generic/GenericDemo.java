@@ -35,12 +35,6 @@ public class GenericDemo {
 
         GenericWipeDemo genericWipeDemo = new GenericWipeDemo();
         genericWipeDemo.test();
-
-        Object name = getName();
-    }
-
-    public static <M> M getName(){
-        return (M) new Object();
     }
 
 
