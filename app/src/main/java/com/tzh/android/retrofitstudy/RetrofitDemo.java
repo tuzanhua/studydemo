@@ -1,5 +1,7 @@
 package com.tzh.android.retrofitstudy;
 
+import com.tzh.android.retrofitstudy.tlearnpre.TResponse;
+
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,18 +23,17 @@ public class RetrofitDemo {
         builder.baseUrl("");
         Retrofit retrofit = builder.build();
         IRequest iRequest = retrofit.create(IRequest.class);
-        Call<String> data = iRequest.getData();
-        data.enqueue(new Callback<String>() {
+        Call<TResponse<String>> name = iRequest.getName();
+        name.enqueue(new Callback<TResponse<String>>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-
+            public void onResponse(Call<TResponse<String>> call, Response<TResponse<String>> response) {
+                TResponse<String> body = response.body();
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<TResponse<String>> call, Throwable t) {
 
             }
         });
-
     }
 }
