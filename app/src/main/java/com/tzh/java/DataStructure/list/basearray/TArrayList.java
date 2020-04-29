@@ -1,4 +1,4 @@
-package com.tzh.java.DataStructure;
+package com.tzh.java.DataStructure.list.basearray;
 
 /**
  * create by tuzanhua on 2020/4/27
@@ -26,7 +26,7 @@ public class TArrayList<E> {
             System.out.println(stringTArrayList.get(i));
         }
     }
-    
+
     private int size;
 
     private Object[] elememts;
