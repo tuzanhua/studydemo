@@ -1,10 +1,13 @@
 package com.tzh.aidlclient;
 
+import android.app.ActivityManager;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PowerManager;
@@ -41,12 +44,19 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    List<Book> books = iBookManager.get();
-                    Log.e(TAG, books.toString());
-                } catch (RemoteException e) {
-                    e.printStackTrace();
-                }
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            List<Book> books = iBookManager.get();
+                            Log.e(TAG, books.toString());
+                        } catch (
+                                RemoteException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
             }
         });
 

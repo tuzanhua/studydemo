@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sdfsf" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dfd" />
+
+    <com.tzh.studydemo.viewtouch.MyRelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.tzh.studydemo.viewtouch.MyMiddleRelativeLayout2
+            android:layout_width="600dp"
+            android:layout_height="600dp"
+            android:background="#ff0">
+
+            <com.tzh.studydemo.viewtouch.MyMiddleRelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerInParent="true"
+                android:background="@color/colorPrimary">
+
+                <com.tzh.studydemo.viewtouch.MyTextView
+                    android:id="@+id/tv"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:background="@color/colorAccent"
+                    android:text="MyTextView" />
+
+
+            </com.tzh.studydemo.viewtouch.MyMiddleRelativeLayout>
+
+        </com.tzh.studydemo.viewtouch.MyMiddleRelativeLayout2>
+
+
+    </com.tzh.studydemo.viewtouch.MyRelativeLayout>
+
+
+</LinearLayout>

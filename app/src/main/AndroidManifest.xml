@@ -20,6 +20,7 @@
         <activity android:name=".HandlerBlockTestActivity" />
         <activity android:name=".MakeLeakActivity" />
         <activity android:name=".activity.FlowLayoutActivity" />
+        <activity android:name=".activity.ViewTouchActivity" />
 
         <service android:name="com.tzh.android.TIntentService.TTestIntentService" />
     </application>

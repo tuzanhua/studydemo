@@ -29,6 +29,12 @@
             android:layout_height="wrap_content"
             android:text="start_flowlayout" />
 
+        <Button
+            android:id="@+id/btn_view_touch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="viewtouch" />
+
     </LinearLayout>
 
 </ScrollView>
