@@ -1,6 +1,8 @@
 package com.tzh.studydemo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +13,12 @@ import androidx.asynclayoutinflater.view.AsyncLayoutInflater;
 import com.tzh.studydemo.activity.FlowLayoutActivity;
 import com.tzh.studydemo.activity.ViewTouchActivity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Map<String,String> map = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_view_touch).setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, ViewTouchActivity.class));
         });
+
+        SharedPreferences sharedPreferences = getSharedPreferences("tzh", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("blog", "www.gityuan.com");
+        editor.putInt("years", 3);
+        editor.commit();
     }
 
     @Override
