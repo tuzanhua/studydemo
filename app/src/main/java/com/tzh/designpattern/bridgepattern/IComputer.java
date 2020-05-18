@@ -1,8 +1,0 @@
-package com.tzh.designpattern.bridgepattern;
-
-/**
- * create by tuzanhua on 2020/4/21
- */
-public interface IComputer {
-    String info();
-}

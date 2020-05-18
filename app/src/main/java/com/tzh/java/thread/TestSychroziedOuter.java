@@ -1,7 +1,5 @@
 package com.tzh.java.thread;
 
-import com.tzh.designpattern.decoratorpattern.DecoratorZhishiCoffe;
-
 /**
  * create by tuzanhua on 2020/4/24
  */
