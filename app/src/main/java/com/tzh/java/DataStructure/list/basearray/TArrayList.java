@@ -18,7 +18,6 @@ public class TArrayList<E> {
         for (int i = 0; i < 20; i++) {
             stringTArrayList.add(i + "个数据");
         }
-
         System.out.println("size : " + stringTArrayList.size);
 
         stringTArrayList.remove(15);
