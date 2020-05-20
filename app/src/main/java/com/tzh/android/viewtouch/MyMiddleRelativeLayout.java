@@ -1,4 +1,4 @@
-package com.tzh.studydemo.viewtouch;
+package com.tzh.android.viewtouch;
 
 import android.content.Context;
 import android.util.AttributeSet;
