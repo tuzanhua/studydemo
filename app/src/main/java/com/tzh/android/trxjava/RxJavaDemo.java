@@ -1,5 +1,7 @@
 package com.tzh.android.trxjava;
 
+import java.util.ArrayList;
+
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
@@ -14,6 +16,20 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
  */
 public class RxJavaDemo {
     public static void main(String[] args) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+        arrayList.add(1);
+        arrayList.add(2);
+        arrayList.add(3);
+        arrayList.add(4);
+        arrayList.add(5);
+        for (Integer i : arrayList) {
+            if (i == 3) {
+                arrayList.remove(i);
+                break;
+            }
+        }
+        System.out.println(arrayList.size());
         @NonNull Observable<Object> objectObservable = Observable.create(new ObservableOnSubscribe<Object>() {
             @Override
             public void subscribe(@NonNull ObservableEmitter<Object> emitter) throws Throwable {

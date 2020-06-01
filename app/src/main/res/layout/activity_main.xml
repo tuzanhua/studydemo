@@ -35,6 +35,12 @@
             android:layout_height="wrap_content"
             android:text="viewtouch" />
 
+        <Button
+            android:id="@+id/btn_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bitmappool" />
+
     </LinearLayout>
 
 </ScrollView>
