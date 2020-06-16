@@ -22,8 +22,13 @@
         <activity android:name=".activity.FlowLayoutActivity" />
         <activity android:name=".activity.ViewTouchActivity" />
         <activity android:name="com.tzh.android.bitmap.BitmappoolActivity" />
+        <activity android:name=".LifecycleActivity" />
 
         <service android:name="com.tzh.android.TIntentService.TTestIntentService" />
+        
+        <provider
+            android:authorities="com.tzh.studydemo.TzhContentProvider1"
+            android:name="com.tzh.studydemo.TzhContentProvider"/>
     </application>
 
 </manifest>
