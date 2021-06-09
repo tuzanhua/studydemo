@@ -1,6 +1,7 @@
 package com.tzh.java;
 
 import java.lang.ref.ReferenceQueue;
+import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 
 /**
@@ -10,21 +11,28 @@ public class WeakRefrenceDemo {
 
     public static void main(String[] args) {
 
-        Person person = new Person();
-        ReferenceQueue<Person> referenceQueue = new ReferenceQueue<>();
-        WeakReference<Person> weakReference = new WeakReference<Person>(person, referenceQueue);
-        System.out.println(weakReference.get());
-        int i = 1;
-        while (true) {
-            System.out.println(person.name);
-            if (weakReference.get() != null) {
-                i++;
-                System.out.println("Object is alive for " + i + " loops - " + weakReference.get());
-            } else {
-                System.out.println("Object is alive for " + i + " loops - null");
-                break;
-            }
-        }
+        String str = "hello";
+
+        SoftReference<String> softReference = new SoftReference<>(str);
+
+        str = "name";
+        System.out.println(softReference.get() + str);
+
+//        Person person = new Person();
+//        ReferenceQueue<Person> referenceQueue = new ReferenceQueue<>();
+//        WeakReference<Person> weakReference = new WeakReference<Person>(person, referenceQueue);
+//        System.out.println(weakReference.get());
+//        int i = 1;
+//        while (true) {
+//            System.out.println(person.name);
+//            if (weakReference.get() != null) {
+//                i++;
+//                System.out.println("Object is alive for " + i + " loops - " + weakReference.get());
+//            } else {
+//                System.out.println("Object is alive for " + i + " loops - null");
+//                break;
+//            }
+//        }
     }
 
     public static class Person {

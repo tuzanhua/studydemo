@@ -1,6 +1,7 @@
 package com.tzh.java.design.shejigame
 
 class YunShuBoatMapFactory : IMapFactory {
+
     override fun createMusic(): String {
         return "运输船 music"
     }

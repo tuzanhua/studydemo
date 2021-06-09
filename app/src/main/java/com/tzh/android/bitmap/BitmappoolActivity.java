@@ -115,8 +115,6 @@ public class BitmappoolActivity extends AppCompatActivity {
             }
         });
         mIv2 = findViewById(R.id.iv_2);
-
-
     }
 
     private void logVm(ActivityManager.MemoryInfo memoryInfo) {

@@ -39,7 +39,7 @@ public class leetCode_876_链表的中间结点 {
         node4.next = node5;
         node5.next = node6;
         ListNode node = middleNode(node1);
-        System.out.println(node);
+        System.out.println(node.val);
     }
 
     public static ListNode middleNode(ListNode head) {

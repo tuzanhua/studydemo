@@ -26,28 +26,45 @@ public class LeetCode_24_反转链表 {
         node3.next = node4;
         node4.next = node5;
         ListNode node = reverseList(node1);
+        show(node);
     }
 
     public static ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
+            // 出口
             return head;
         }
-        ListNode cur = reverseList(head.next);
+
+        ListNode tailNode = reverseList(head.next);
+
         head.next.next = head;
         head.next = null;
-        return cur;
+
+        return tailNode;
     }
 
     public static ListNode reverseList1(ListNode head) {
 
-        ListNode pre = null;
+        ListNode preNode = null;
+
         while (head != null) {
+            // temp
             ListNode temp = head.next;
-            head.next = pre;
-            pre = head;
+            //转移链
+            head.next = preNode;
+            // 赋值
+            preNode = head;
+            //循环
             head = temp;
         }
 
-        return pre;
+        return preNode;
+    }
+
+    public static void show(ListNode node) {
+        while (node != null) {
+            System.out.println(node.val);
+            node = node.next;
+        }
     }
 }

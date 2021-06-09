@@ -9,7 +9,7 @@ public class Observable {
 
     private ArrayList<Observer> observers = new ArrayList<>();
 
-    public void registObserver(Observer observer) {
+    public void registerObserver(Observer observer) {
         if (!observers.contains(observer)) {
             observers.add(observer);
         }

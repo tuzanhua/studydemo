@@ -1,2 +1,5 @@
+include ':designpattern'
+include ':imgloader'
+include ':network'
 include ':app', ':aidlserver', ':aidlclient'
 rootProject.name='StudyDemo'

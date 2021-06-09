@@ -47,6 +47,30 @@
             android:layout_height="wrap_content"
             android:text="lifecycleactivity" />
 
+        <Button
+            android:id="@+id/share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="share" />
+
+        <Button
+            android:id="@+id/re"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="re" />
+
+        <Button
+            android:id="@+id/ol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="切换" />
+
+        <Button
+            android:id="@+id/launch_mode1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mode1" />
+
     </LinearLayout>
 
 </ScrollView>

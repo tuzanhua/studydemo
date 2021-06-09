@@ -7,13 +7,16 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:/develop/gradle-5.1" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../develop/gradle-5.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/aidlclient" />
             <option value="$PROJECT_DIR$/aidlserver" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/designpattern" />
+            <option value="$PROJECT_DIR$/imgloader" />
+            <option value="$PROJECT_DIR$/network" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

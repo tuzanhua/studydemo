@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.tzh.android.customview.ZJButton
+            style="@style/AppTheme"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="hello" />
+
+        <View
+            android:layout_width="300dp"
+            android:layout_height="100dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="回家爱德华房间卡都会发卡交电话费阿机啊家电话费阿抠脚大汉发卡机的和反馈"/>
+
+    </LinearLayout>
+
+</LinearLayout>
