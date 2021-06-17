@@ -30,7 +30,6 @@ public class AlternateDemo {
         String str1 = "ABCDEFG";
         String str2 = "1234567";
 
-
         char[] chars = str1.toCharArray();
         char[] chars2 = str2.toCharArray();
 

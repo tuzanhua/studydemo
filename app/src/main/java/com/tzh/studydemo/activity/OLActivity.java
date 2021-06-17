@@ -9,6 +9,7 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.tzh.studydemo.R;
 
@@ -23,6 +24,8 @@ public class OLActivity extends AppCompatActivity {
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             }
         });
+
+        DemoViewmodel demoViewmodel = new ViewModelProvider(this).get(DemoViewmodel.class);
     }
 
     @Override
@@ -41,5 +44,11 @@ public class OLActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Log.e("tzh","onStop:" );
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.e("tzh","onDestroy" );
+        super.onDestroy();
     }
 }
